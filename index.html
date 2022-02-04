@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="title">Enforcing Privacy With Cryptography</h1>
+        <div>
+            <p>Input a number of 4 digits</p>
+            <input type="text" name="char" class="char" id="char"/>
+            <button name="submit" class="btn" onclick="return charToInt()">Encrypt</button>
+        </div>
+        <div class="integer">
+            <p id="ul"></p>
+        </div>
+        <div>
+            <p>Input a number of 4 digits</p>
+            <input type="text" name="dec" class="char" id="dec"/>
+            <button name="submit" class="btn" onclick="return decrypt()">Decrypt</button>
+        </div>
+        <div class="integer">
+            <p id="lu"></p>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
