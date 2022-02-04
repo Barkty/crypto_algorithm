@@ -36,11 +36,11 @@ const charToInt = () => {
 const decrypt = () => {
     var input = document.getElementById('dec').value;
     var newInput = parseInt(input);
-    //console.log(newInput);
     var str = newInput.toString();
-    //console.log(str);
     var out = [];
-
+    let res = [];
+    let sub = [];
+    let int = [];
     for (let i = 0; i < str.length; i++) {
         out.push(+str.charAt(i));
     }
@@ -51,12 +51,23 @@ const decrypt = () => {
     }
     swapNum(out, 0, 2);
     swapNum(out, 1, 3);
-    console.log(out);
-    
-    for (let i = 0; i < str.length; i++){
 
+    for (let i = 0; i < out.length; i++){
+        res.push((10 * 1) + (+out[i]))
+    }
+    for (let i = 0; i < res.length; i++){
+        sub.push(+res[i] - 7);
     }
 
+    for (let i = 0; i < sub.length; i++){
+        if(sub[i] > 9) {
+            int.push(+sub[i] - 10);
+        } else {
+            int.push(+sub[i]);
+        }
+    }
+
+    let ner = Number(int.join(''));
     var lu = document.getElementById('lu');
-    //lu.innerHTML = `The encrpyted integer is ${res}`;
+    lu.innerHTML = `The decrpyted integer is ${ner}`;
 }
