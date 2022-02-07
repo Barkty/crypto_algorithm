@@ -13,10 +13,15 @@ const charToInt = () => {
     for (let i = 0; i < out.length; i++) {
         val.push(+out[i] / 2);
     } 
-    //console.log(val);   
-    let res = Number(val.join(''));
-    //console.log(res); // logs 0189
+    //console.log(val); 
+    
+    var x = 0;
+
+    for (let i = 0; i < val.length; i++) {
+        x += val[i];
+    }
+    //console.log(x);
 
     var ul = document.getElementById('ul');
-    ul.innerHTML = `The encrpyted integer is ${res}`;
+    ul.innerHTML = `The decimal equivalent of ${input} is ${x}`;
 }
