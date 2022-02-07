@@ -8,7 +8,8 @@ const charToInt = () => {
 
     //Validate if integer is 5 digits
     if (input.length != 5) {
-        alert('Integer must be five digits');
+        var ul = document.getElementById('ul');
+        ul.innerHTML = `Integer must be five digits`;
     } else {
         for (let i = 0; i < input.length; i++) {
             out.push(+input.charAt(i));
