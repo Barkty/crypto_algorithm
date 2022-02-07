@@ -24,5 +24,10 @@ const addNewRow = () => {
 }
 
 const handleSubmit = () => {
-    alert('values');
+    var amount1 = document.getElementById('amount').value;
+    var amount2 = document.getElementById('amt').value;
+    var amount3 = document.getElementById('price').value;
+
+    console.log(amount1, amount2, amount3);
+    
 }
