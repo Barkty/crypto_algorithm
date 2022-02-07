@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Commission Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="title">Sales Commission Calculator</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form name="salesForm" id="salesForm" onsubmit="return handleSubmit()">
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text" name="char" class="char" id="item">
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" name="char" class="char" id="amount">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text" name="char" class="char" id="name">
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" name="char" class="char" id="amt">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text" name="char" class="char" id="good">
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" name="char" class="char" id="price">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <button type="submit" name="submit" class="btn">Calculate</button>
+                </form>
+            </tbody>
+        </table>
+        <button type="button" name="add" class="btn add" onclick="return addNewRow()">Add New Row</button>
+        <div class="integer">
+            <p id="lu"></p>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
