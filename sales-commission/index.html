@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form name="salesForm" id="salesForm" onsubmit="return handleSubmit()" method="post">
+                <form name="salesForm" id="salesForm" method="post">
                     <tr>
                         <td>
                             <div>
@@ -57,7 +57,7 @@
                         </td>
                     </tr>
 
-                    <button type="submit" name="submit" class="btn">Calculate</button>
+                    <button type="button" name="submit" class="btn" onclick="return handleSubmit()">Calculate</button>
                 </form>
             </tbody>
         </table>
