@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Commission Calculator</title>
+    <title>Gas Mileage Calculator</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="wrapper">
-        <h1 class="title">Sales Commission Calculator</h1>
+        <h1 class="title">Gas Mileage Calculator</h1>
 
         <table>
             <thead>
                 <tr>
-                    <th>Item</th>
-                    <th>Value</th>
+                    <th>Miles per trip</th>
+                    <th>Gallons per trip</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,36 +23,36 @@
                     <tr>
                         <td>
                             <div>
-                                <input type="text" name="item1" class="char" id="item">
+                                <input type="text" name="item1" class="char" id="mile1">
                             </div>
                         </td>
                         <td>
                             <div>
-                                <input type="text" name="amount1" class="char" id="amount">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <input type="text" name="item2" class="char" id="name">
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="text" name="amount2" class="char" id="amt">
+                                <input type="text" name="amount1" class="char" id="gallon1">
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div>
-                                <input type="text" name="item3" class="char" id="good">
+                                <input type="text" name="item2" class="char" id="mile2">
                             </div>
                         </td>
                         <td>
                             <div>
-                                <input type="text" name="amount3" class="char" id="price">
+                                <input type="text" name="amount2" class="char" id="gallon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text" name="item3" class="char" id="mile3">
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" name="amount3" class="char" id="gallon3">
                             </div>
                         </td>
                     </tr>
@@ -61,7 +61,7 @@
                 </form>
             </tbody>
         </table>
-        <button type="button" name="add" class="btn add" onclick="return addNewRow()">Add New Row</button>
+        <!-- <button type="button" name="add" class="btn add" onclick="return addNewRow()">Add New Row</button> -->
         <div class="integer">
             <p id="lu"></p>
         </div>
