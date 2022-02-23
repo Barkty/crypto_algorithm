@@ -6,18 +6,15 @@ const load = () => {
     }
 }
 
-const charToInt = () => {
-    var input = document.getElementById('char').value;
-    var newInput = parseInt(input);
-    //console.log(newInput);
-    var str = newInput.toString();
+const encrypt = (n) => {
+    
     //console.log(str);
     var out = []
     
-    for (let i = 0; i < str.length; i++) {
-        out.push((+str.charAt(i) + 7) % 10);
+    for (let i = 0; i < n.length; i++) {
+        out.push((+n.charAt(i) + 7) % 10);
     }
-    console.log(out); //logs [8, 9, 0, 1]
+    //console.log(out); //logs [8, 9, 0, 1]
     const swapNum = (arr, indexA, indexB) => {
         var temp = arr[indexA];
         arr[indexA] = arr[indexB];
@@ -25,24 +22,18 @@ const charToInt = () => {
     }
     swapNum(out, 0, 2);
     swapNum(out, 1, 3);
-    console.log(out);
-    let res = Number(out.join(''));
-    console.log(res); // logs 0189
+    //console.log(out);
 
-    var ul = document.getElementById('ul');
-    ul.innerHTML = `The encrpyted integer is ${res}`;
+    return Number(out.join(''));
 }
 
-const decrypt = () => {
-    var input = document.getElementById('dec').value;
-    var newInput = parseInt(input);
-    var str = newInput.toString();
+const decrypt = (n) => {
     var out = [];
     let res = [];
     let sub = [];
     let int = [];
-    for (let i = 0; i < str.length; i++) {
-        out.push(+str.charAt(i));
+    for (let i = 0; i < n.length; i++) {
+        out.push(+n.charAt(i));
     }
     const swapNum = (arr, indexA, indexB) => {
         var temp = arr[indexA];
@@ -67,7 +58,18 @@ const decrypt = () => {
         }
     }
 
-    let ner = Number(int.join(''));
-    var lu = document.getElementById('lu');
-    lu.innerHTML = `The decrpyted integer is ${ner}`;
+    return Number(int.join(''));
+}
+
+//Create another function that calls the two functions
+const handleClick = (func, isEncrypt) => {
+    const elementId = isEncrypt ? 'char' : 'dec';
+    const input = document.getElementById(elementId).value;
+    let parsedInput = parseInt(input);
+    let str = parsedInput.toString();
+    let res = func(str);
+
+    const displayResultElementId = isEncrypt ? 'ul' : 'lu';
+    let displayResult = document.getElementById(displayResultElementId);
+    displayResult.innerHTML = `The ${isEncrypt ? 'encrypted' : 'decrypted'} is ${res}`;
 }

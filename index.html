@@ -13,7 +13,7 @@
         <div>
             <p>Input a number of 4 digits</p>
             <input type="text" name="char" class="char" id="char"/>
-            <button name="submit" class="btn" onclick="return charToInt()">Encrypt</button>
+            <button name="submit" class="btn" onclick="return handleClick(encrypt, true)">Encrypt</button>
         </div>
         <div class="integer">
             <p id="ul"></p>
@@ -21,7 +21,7 @@
         <div>
             <p>Input a number of 4 digits</p>
             <input type="text" name="dec" class="char" id="dec"/>
-            <button name="submit" class="btn" onclick="return decrypt()">Decrypt</button>
+            <button name="submit" class="btn" onclick="return handleClick(decrypt, false)">Decrypt</button>
         </div>
         <div class="integer">
             <p id="lu"></p>
