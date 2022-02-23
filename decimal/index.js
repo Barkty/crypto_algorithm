@@ -1,11 +1,11 @@
-const charToInt = () => {
+const printDecimalEquivalent = () => {
     var input = document.getElementById('char').value;
     //console.log(input);
     var out = [];
     var val = [];
     var position = 1;
 
-    for (let i = 0; i < input.length; i++) {
+    for (let i = input.length - 1 ; i >= 0; i--) {
         out.push((+input.charAt(i) % 10) * (position *= 2));
     }
     //console.log(out); //logs [8, 9, 0, 1]
