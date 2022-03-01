@@ -34,13 +34,8 @@ const handleSubmit = () => {
     let rates = parseFloat(ratePerHour);
     let out = document.getElementById('lu');
 
-    if (hr1 > 40) {
-        let extraHours = hr1 - 40;
-        let halfTime = extraHours / 2;
-        let salary = (40 * rates) + (halfTime * rates);
+    let extraHours = hr1 - 40;
+    let salary = (40 * rates) + (extraHours * rates * 1.5);
 
-        out.innerHTML = `Total salary for the month is ${salary}`;
-    } else {
-        out.innerHTML = `Total salary for the month is ${hr1 * rates}`;
-    }
+    out.innerHTML = `Total salary for the month is ${salary}`;
 }
