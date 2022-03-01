@@ -1,46 +1,44 @@
-const addNewRow = () => {
-    let row = document.createElement('tr');
-    //console.log(row);
-    let text = `<tr>
-                    <td>
-                        <div>
-                            <input type="text" name="char" class="char" id="item">
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="text" name="char" class="char" id="char">
-                        </div>
-                    </td>
-                </tr>`;
-    //console.log(text);
-    row.innerHTML = text;
-    //row.appendChild(text);
-    //console.log(row);            
-    let form = document.querySelector('#salesForm');
-    form.innerHTML += text;
-    //form.innerHTML = row;
-    console.log(form);
-}
+const predictWorldPopulation = () => {
+    const INITIAL_WORLD_POPULATION = 79e8;
+    const GROWTH_RATES = 1.05 / 100;
+    const INITIAL_YEAR = 2021;
+    const yearsOfPrediction = 75;
+    let currentWorldPopulation = INITIAL_WORLD_POPULATION;
+    let currentYear = INITIAL_YEAR;
+    let iSDoubleDetected = false;
+    let table = ``;
+    const tableHead = `<thead>
+        <tr>
+            <th>S/N</th>
+            <th>Year</th>
+            <th>Anticipated World Population</th>
+        </tr>
+                        </thead>`;
 
-const handleSubmit = () => {
-    let ratePerHour = document.getElementById('amount').value;
-    let hoursOfWork = document.getElementById('hour').value;
+    for (let i = 1; i <= yearsOfPrediction; i++) {
+        currentWorldPopulation += Math.floor(currentWorldPopulation * GROWTH_RATES);
+        currentYear = INITIAL_YEAR + i;
+        console.log(currentYear, currentWorldPopulation);
 
-    console.log(hoursOfWork);
-    console.log(ratePerHour);
+        let tableBody = `
+            <tbody>
+                <tr>
+                    <td>${i}</td>
+                    <td>${currentYear}</td>
+                    <td>${currentWorldPopulation}</td>
+                </tr>
+            </tbody>
+        `;
 
-    let hr1 = parseFloat(hoursOfWork);
-    let rates = parseFloat(ratePerHour);
-    let out = document.getElementById('lu');
+        table += tableBody;
 
-    if (hr1 > 40) {
-        let extraHours = hr1 - 40;
-        let halfTime = extraHours / 2;
-        let salary = (40 * rates) + (halfTime * rates);
+        const TABLE = `<table id='populationTable'>` + tableHead + table + `</table>`;
+        document.getElementById('integer').innerHTML = TABLE;
 
-        out.innerHTML = `Total salary for the month is ${salary}`;
-    } else {
-        out.innerHTML = `Total salary for the month is ${hr1 * rates}`;
+        if (currentWorldPopulation >= (INITIAL_WORLD_POPULATION * 2)) {
+            if(iSDoubleDetected) continue;
+            console.log(`Population doubled in the year ${currentYear} with populaton ${currentWorldPopulation}`);
+            iSDoubleDetected = true;
+        }
     }
 }
