@@ -18,7 +18,7 @@ const predictWorldPopulation = () => {
     for (let i = 1; i <= yearsOfPrediction; i++) {
         currentWorldPopulation += Math.floor(currentWorldPopulation * GROWTH_RATES);
         currentYear = INITIAL_YEAR + i;
-        console.log(currentYear, currentWorldPopulation);
+        //console.log(currentYear, currentWorldPopulation);
 
         let tableBody = `
             <tbody>
@@ -34,11 +34,16 @@ const predictWorldPopulation = () => {
 
         const TABLE = `<table id='populationTable'>` + tableHead + table + `</table>`;
         document.getElementById('integer').innerHTML = TABLE;
-
+        
         if (currentWorldPopulation >= (INITIAL_WORLD_POPULATION * 2)) {
             if(iSDoubleDetected) continue;
-            console.log(`Population doubled in the year ${currentYear} with populaton ${currentWorldPopulation}`);
+            // console.log(`Population doubled in the year ${currentYear} with populaton ${currentWorldPopulation}`);
             iSDoubleDetected = true;
         }
     }
+    
+    // let populationTable = document.getElementById('populationTable');
+    // for (let i = 0, row; row = populationTable.rows[i]; i++) {
+    //     if(parseFloat(row.cells[i].innerText) == ){}
+    // }
 }
